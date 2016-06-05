@@ -1,0 +1,184 @@
+body.black {
+  background-color: black;
+}
+body.white {
+  background-color: white;
+}
+#panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+#panel .box {
+  display: inline-block;
+}
+#panel #panel-icon {
+  position: absolute;
+  top: 3em;
+  right: 3em;
+  cursor: pointer;
+  width: 5.6em;
+  transform: rotate(45deg);
+}
+#panel #panel-icon.active .box {
+  background-color: #3BC7DB !important;
+}
+#panel #panel-icon.active .box.up {
+  transform: translateX(1em) translateY(1em);
+}
+#panel #panel-icon.active .box.down {
+  transform: translateX(-1em) translateY(-1em);
+}
+#panel #panel-icon.active .box.left {
+  transform: translateX(1em) translateY(-1em);
+}
+#panel #panel-icon.active .box.right {
+  transform: translateX(-1em) translateY(1em);
+}
+#panel #panel-icon .box {
+  transition-property: transform, background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+  margin: 0.2em;
+  width: 2em;
+  height: 2em;
+  border-radius: 0.2em;
+}
+#panel #panel-display {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 10em;
+  width: 33em;
+  perspective: 1000px;
+}
+#panel #panel-display .box {
+  transition-property: transform;
+  transition-duration: 600ms;
+  transition-timing-function: linear;
+  transform-style: preserve-3d;
+}
+#panel #panel-display .box .front,
+#panel #panel-display .box .back {
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border-radius: 1em;
+}
+#panel #panel-display .box .front {
+  transform: rotateX(0deg);
+}
+#panel #panel-display .box:nth-child(even) .back {
+  transform: rotateX(180deg);
+}
+#panel #panel-display .box:nth-child(odd) .back {
+  transform: rotateY(180deg);
+}
+#panel #panel-display.flipped .box:nth-child(even) {
+  transform: rotateX(180deg);
+}
+#panel #panel-display.flipped .box:nth-child(odd) {
+  transform: rotateY(180deg);
+}
+#panel #panel-display .box {
+  width: 10em;
+  height: 10em;
+  margin: 0.4em;
+  text-align: center;
+}
+#panel #panel-display .box .stamp {
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#panel #panel-display .box .color {
+  background-color: #D2162A !important;
+}
+#panel #panel-display .box .color:hover {
+  background-color: #3BC7DB !important;
+  background-image: none !important;
+}
+#panel #panel-display .box-content {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: 3em;
+  font-weight: bold;
+}
+#panel #panel-display .box-content .icon {
+  height: 2em;
+  width: 2em;
+}
+body.white #panel #panel-icon .box,
+body.white #panel #panel-display .box .front,
+body.white #panel #panel-display .box .back {
+  background-color: black;
+}
+body.white #panel #panel-display .box {
+  color: white;
+}
+body.white #panel #panel-display .box .icon {
+  fill: white;
+}
+body.white #panel #panel-display .box .front:hover,
+body.white #panel #panel-display .box .back:hover {
+  background-repeat: repeat;
+  color: black;
+  background-color: white;
+}
+body.white #panel #panel-display .box .front:hover .icon,
+body.white #panel #panel-display .box .back:hover .icon {
+  fill: black;
+}
+body.white #panel #panel-display .box .stamp {
+  background-image: url('/img/m-black.gif') !important;
+  background-color: white;
+}
+body.white #panel #panel-display.rectangles .box .front:hover,
+body.white #panel #panel-display.rectangles .box .back:hover {
+  background-image: url('/img/rectangle_white.gif');
+}
+body.white #panel .icon {
+  fill: white;
+}
+body.black #panel #panel-icon .box,
+body.black #panel #panel-display .box .front,
+body.black #panel #panel-display .box .back {
+  background-color: white;
+}
+body.black #panel #panel-display .box {
+  color: black;
+}
+body.black #panel #panel-display .box .icon {
+  fill: black;
+}
+body.black #panel #panel-display .box .front:hover,
+body.black #panel #panel-display .box .back:hover {
+  background-repeat: repeat;
+  color: white;
+  background-color: black;
+}
+body.black #panel #panel-display .box .front:hover .icon,
+body.black #panel #panel-display .box .back:hover .icon {
+  fill: white;
+}
+body.black #panel #panel-display .box .stamp {
+  background-image: url('/img/m-white.gif') !important;
+  background-color: black;
+}
+body.black #panel #panel-display.rectangles .box .front:hover,
+body.black #panel #panel-display.rectangles .box .back:hover {
+  background-image: url('/img/rectangle_black.gif');
+}

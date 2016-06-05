@@ -1,0 +1,214 @@
+.box-container-width(@box-size, @box-margin, @box-border, @box-per-row) {
+  width: (@box-size + (@box-margin + @box-border) * 2) * @box-per-row;
+}
+
+#panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: @z-top;
+
+  .box {
+    display: inline-block;
+  }
+
+  #panel-icon {
+    @box-size: 2em;
+    @box-margin: 0.2em;
+    @box-border: 0.2em;
+    @box-per-row: 2;
+
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    cursor: pointer;
+    .box-container-width(@box-size, @box-margin, @box-border, @box-per-row);
+
+    transform: rotate(45deg);
+
+    &.active {
+      .box {
+        background-color: @blue !important;
+
+        &.up { transform: translateX(1em) translateY(1em); }
+        &.down { transform: translateX(-1em) translateY(-1em); }
+        &.left { transform: translateX(1em) translateY(-1em); }
+        &.right { transform: translateX(-1em) translateY(1em); }
+      }
+    }
+
+    .box {
+      transition-property: transform, background-color;
+      transition-duration: @transition-timing;
+      transition-timing-function: ease;
+
+      margin: @box-margin;
+      width: @box-size;
+      height: @box-size;
+      border-radius: @box-border;
+    }
+  }
+
+  #panel-display {
+    @box-size: 10em;
+    @box-margin: 0.4em;
+    @box-border: 0.1em;
+    @box-per-row: 3;
+
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 10em;
+    .box-container-width(@box-size, @box-margin, @box-border, @box-per-row);
+
+    //
+    // 3d properties
+    //
+
+    perspective: 1000px;
+
+    .box {
+      transition-property: transform;
+      transition-duration: @transition-timing * 2;
+      transition-timing-function: linear;
+      transform-style: preserve-3d;
+
+      .front, .back {
+        backface-visibility: hidden;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        border-radius: @box-border * 10;
+      }
+
+      // set .front & .back starting position
+      .front {
+        transform: rotateX(0deg);
+      }
+
+      &:nth-child(even) .back {
+        transform: rotateX(180deg);
+      }
+      &:nth-child(odd) .back {
+        transform: rotateY(180deg);
+      }
+    }
+
+    &.flipped .box {
+      &:nth-child(even) {
+        transform: rotateX(180deg);
+      }
+      &:nth-child(odd) {
+        transform: rotateY(180deg);
+      }
+    }
+
+    //
+    // end 3d properties
+    //
+
+    .box {
+      width: @box-size;
+      height: @box-size;
+      margin: @box-margin;
+      text-align: center;
+
+      .stamp {
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+
+      .color {
+        background-color: @red !important;
+
+        &:hover {
+          background-color: @blue !important;
+          background-image: none !important;
+        };
+      }
+    }
+
+    .box-content {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 3em;
+      font-weight: bold;
+
+      .icon {
+        height: 2em;
+        width: 2em;
+      }
+    }
+  }
+
+}
+
+body.white #panel {
+  #panel-icon .box,
+  #panel-display .box .front,
+  #panel-display .box .back { background-color: black; }
+
+  #panel-display .box {
+    color: white;
+    .icon { fill: white; }
+
+    .front:hover, .back:hover {
+      background-repeat: repeat;
+      color: black;
+      background-color: white;
+
+      .icon { fill: black; }
+    }
+    .stamp {
+      background-image: url('/img/m-black.gif') !important;
+      background-color: white;
+    }
+  }
+
+  #panel-display.rectangles .box {
+    .front:hover, .back:hover {
+      background-image: url('/img/rectangle_white.gif');
+    }
+  }
+
+  .icon { fill: white; }
+}
+
+body.black #panel {
+  #panel-icon .box,
+  #panel-display .box .front,
+  #panel-display .box .back { background-color: white; }
+
+  #panel-display .box {
+    color: black;
+    .icon { fill: black; }
+
+    .front:hover, .back:hover {
+      background-repeat: repeat;
+      color: white;
+      background-color: black;
+
+      .icon { fill: white; }
+    }
+    .stamp {
+      background-image: url('/img/m-white.gif') !important;
+      background-color: black;
+    }
+  }
+
+  #panel-display.rectangles .box {
+    .front:hover, .back:hover {
+      background-image: url('/img/rectangle_black.gif');
+    }
+  }
+}

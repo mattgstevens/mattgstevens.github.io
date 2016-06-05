@@ -1,0 +1,27 @@
+{
+  "name": "mattgstevens-com",
+  "version": "1.0.0",
+  "description": "A www thing on the net for mattgstevens",
+  "main": "index.html",
+  "scripts": {
+    "build": "gulp build",
+    "server": "gulp server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattgstevens/mattgstevens-com.github.io.git"
+  },
+  "author": "mattgstevens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattgstevens/mattgstevens-com.github.io/issues"
+  },
+  "homepage": "https://github.com/mattgstevens/mattgstevens-com#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.1",
+    "gulp-less": "^3.0.5",
+    "gulp-server-livereload": "^1.7.3",
+    "less-plugin-autoprefix": "^1.5.1"
+  }
+}
