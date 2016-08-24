@@ -152,6 +152,7 @@
         elementMap['panel-icon'].onclick = togglePanelDisplay;
         addClass(document.body, flipTruthyCoin() ? 'black' : 'white');
         addClass(elementMap['panel-display'], flipTruthyCoin() ? '' : 'rectangles');
+        addClass(elementMap['panel-display'], flipTruthyCoin() ? 'elephant' : 'mandala');
         setTimeout(function() { !toggledOnce ? togglePanelDisplay() : null }, 2000);
       })()
     </script>
