@@ -10,8 +10,8 @@ body.white {
 @media (min-width: 0px) {
   #panel-icon {
     position: fixed;
-    top: 1em;
-    right: 1em;
+    top: 2em;
+    right: 2em;
     cursor: pointer;
     width: 2.6em;
     transform: rotate(45deg);
@@ -44,7 +44,7 @@ body.white {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 4em;
+    top: 6em;
     width: 17.4em;
     perspective: 1000px;
   }
@@ -62,7 +62,7 @@ body.white {
     width: 100%;
     position: absolute;
     top: 0;
-    border-radius: 0.6em;
+    border-radius: 1em;
   }
   #panel-display .box .front {
     transform: rotateX(0deg);
@@ -92,7 +92,8 @@ body.white {
   #panel-display .box .color {
     background-color: #D2162A !important;
   }
-  #panel-display .box .color:hover {
+  #panel-display .box .color:hover,
+  #panel-display .box .color:active {
     background-color: #3BC7DB !important;
     background-image: none !important;
   }
@@ -119,8 +120,8 @@ body.white {
 @media (min-width: 768px) {
   #panel-icon {
     position: fixed;
-    top: 2em;
-    right: 2em;
+    top: 4em;
+    right: 4em;
     cursor: pointer;
     width: 5.6em;
     transform: rotate(45deg);
@@ -153,7 +154,7 @@ body.white {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    top: 8em;
+    top: 12em;
     width: 33em;
     perspective: 1000px;
   }
@@ -171,7 +172,7 @@ body.white {
     width: 100%;
     position: absolute;
     top: 0;
-    border-radius: 0.3em;
+    border-radius: 1em;
   }
   #panel-display .box .front {
     transform: rotateX(0deg);
@@ -201,7 +202,8 @@ body.white {
   #panel-display .box .color {
     background-color: #D2162A !important;
   }
-  #panel-display .box .color:hover {
+  #panel-display .box .color:hover,
+  #panel-display .box .color:active {
     background-color: #3BC7DB !important;
     background-image: none !important;
   }
@@ -237,13 +239,17 @@ body.white #panel #panel-display .box .icon {
   fill: white;
 }
 body.white #panel #panel-display .box .front:hover,
-body.white #panel #panel-display .box .back:hover {
+body.white #panel #panel-display .box .front:active,
+body.white #panel #panel-display .box .back:hover,
+body.white #panel #panel-display .box .back:active {
   background-repeat: repeat;
   color: black;
   background-color: white;
 }
 body.white #panel #panel-display .box .front:hover .icon,
-body.white #panel #panel-display .box .back:hover .icon {
+body.white #panel #panel-display .box .front:active .icon,
+body.white #panel #panel-display .box .back:hover .icon,
+body.white #panel #panel-display .box .back:active .icon {
   fill: black;
 }
 body.white #panel #panel-display .box .stamp {
@@ -251,7 +257,9 @@ body.white #panel #panel-display .box .stamp {
   background-image: url('/img/em-black.gif') !important;
 }
 body.white #panel #panel-display.rectangles .box .front:hover,
-body.white #panel #panel-display.rectangles .box .back:hover {
+body.white #panel #panel-display.rectangles .box .front:active,
+body.white #panel #panel-display.rectangles .box .back:hover,
+body.white #panel #panel-display.rectangles .box .back:active {
   background-image: url('/img/rectangle_white.gif');
 }
 body.white #panel .icon {
@@ -269,13 +277,17 @@ body.black #panel #panel-display .box .icon {
   fill: black;
 }
 body.black #panel #panel-display .box .front:hover,
-body.black #panel #panel-display .box .back:hover {
+body.black #panel #panel-display .box .front:active,
+body.black #panel #panel-display .box .back:hover,
+body.black #panel #panel-display .box .back:active {
   background-repeat: repeat;
   color: white;
   background-color: black;
 }
 body.black #panel #panel-display .box .front:hover .icon,
-body.black #panel #panel-display .box .back:hover .icon {
+body.black #panel #panel-display .box .front:active .icon,
+body.black #panel #panel-display .box .back:hover .icon,
+body.black #panel #panel-display .box .back:active .icon {
   fill: white;
 }
 body.black #panel #panel-display .box .stamp {
@@ -283,17 +295,29 @@ body.black #panel #panel-display .box .stamp {
   background-color: black;
 }
 body.black #panel #panel-display.rectangles .box .front:hover,
-body.black #panel #panel-display.rectangles .box .back:hover {
+body.black #panel #panel-display.rectangles .box .front:active,
+body.black #panel #panel-display.rectangles .box .back:hover,
+body.black #panel #panel-display.rectangles .box .back:active {
   background-image: url('/img/rectangle_black.gif');
 }
-#panel #panel-display.elephant .box .stamp:hover {
+#panel #panel-display.elephant .box .stamp:hover,
+#panel #panel-display.elephant .box .stamp:active {
   background-image: url('/img/em-elephant.jpg') !important;
 }
-#panel #panel-display.mandala .box .stamp:hover {
+#panel #panel-display.goldpanda .box .stamp:hover,
+#panel #panel-display.goldpanda .box .stamp:active {
+  background-image: url('/img/em-goldpanda.jpg') !important;
+}
+#panel #panel-display.mandala .box .stamp:hover,
+#panel #panel-display.mandala .box .stamp:active {
   background-image: url('/img/em-mandala.jpg') !important;
 }
+#panel #panel-display.nimbus .box .stamp:hover,
+#panel #panel-display.nimbus .box .stamp:active {
+  background-image: url('/img/em-nimbus.jpg') !important;
+}
 #panel {
-  background: url('/img/em-elephant.jpg'), url('/img/em-mandala.jpg');
+  background: url('/img/em-elephant.jpg'), url('/img/em-goldpanda.jpg'), url('/img/em-mandala.jpg'), url('/img/em-nimbus.jpg');
   background-repeat: no-repeat;
   background-position: -9000px -8000px;
 }

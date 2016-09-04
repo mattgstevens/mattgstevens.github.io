@@ -31,7 +31,7 @@
     }
 
     #panel-display {
-      @top-offset: @icon-box-size * @icon-box-per-row * 2;
+      @top-offset: @icon-box-size * @icon-box-per-row * 3;
       .panel-display(@display-box-size, @display-box-margin, @display-box-border, @display-box-per-row, @top-offset);
     }
   }
@@ -40,8 +40,8 @@
 
 .panel-icon(@box-size, @box-margin, @box-border, @box-per-row) {
   position: fixed;
-  top: @box-size;
-  right: @box-size;
+  top: @box-size * 2;
+  right: @box-size * 2;
   cursor: pointer;
   .box-container-width(@box-size, @box-margin, @box-border, @box-per-row);
 
@@ -89,14 +89,15 @@
     transition-timing-function: linear;
     transform-style: preserve-3d;
 
-    .front, .back {
+    .front,
+    .back {
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
       height: 100%;
       width: 100%;
       position: absolute;
       top: 0;
-      border-radius: @box-border * 3;
+      border-radius: 1em;
     }
 
     // set .front & .back starting position
@@ -139,7 +140,8 @@
     .color {
       background-color: @red !important;
 
-      &:hover {
+      &:hover,
+      &:active {
         background-color: @blue !important;
         background-image: none !important;
       };
@@ -178,7 +180,10 @@ body.white #panel {
     color: white;
     .icon { fill: white; }
 
-    .front:hover, .back:hover {
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-repeat: repeat;
       color: black;
       background-color: white;
@@ -192,7 +197,10 @@ body.white #panel {
   }
 
   #panel-display.rectangles .box {
-    .front:hover, .back:hover {
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-image: url('/img/rectangle_white.gif');
     }
   }
@@ -209,7 +217,10 @@ body.black #panel {
     color: black;
     .icon { fill: black; }
 
-    .front:hover, .back:hover {
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-repeat: repeat;
       color: white;
       background-color: black;
@@ -224,21 +235,37 @@ body.black #panel {
   }
 
   #panel-display.rectangles .box {
-    .front:hover, .back:hover {
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-image: url('/img/rectangle_black.gif');
     }
   }
 }
 
-#panel #panel-display.elephant .box .stamp:hover {
+#panel #panel-display.elephant .box .stamp:hover,
+#panel #panel-display.elephant .box .stamp:active {
   background-image: url('/img/em-elephant.jpg') !important;
 }
-#panel #panel-display.mandala .box .stamp:hover {
+#panel #panel-display.goldpanda .box .stamp:hover,
+#panel #panel-display.goldpanda .box .stamp:active {
+  background-image: url('/img/em-goldpanda.jpg') !important;
+}
+#panel #panel-display.mandala .box .stamp:hover,
+#panel #panel-display.mandala .box .stamp:active {
   background-image: url('/img/em-mandala.jpg') !important;
+}
+#panel #panel-display.nimbus .box .stamp:hover,
+#panel #panel-display.nimbus .box .stamp:active {
+  background-image: url('/img/em-nimbus.jpg') !important;
 }
 
 #panel {
-  background: url('/img/em-elephant.jpg'), url('/img/em-mandala.jpg');
+  background: url('/img/em-elephant.jpg'),
+              url('/img/em-goldpanda.jpg'),
+              url('/img/em-mandala.jpg'),
+              url('/img/em-nimbus.jpg');
   background-repeat: no-repeat;
   background-position: -9000px -8000px;
 }
