@@ -8,44 +8,40 @@
       <div id='panel-display'>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>m</div>
+            <div class='box-content char'>m</div>
           </div>
           <div class='back stamp'></div>
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>a</div>
+            <div class='box-content char'>a</div>
           </div>
           <div class='back'></div>
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>t</div>
+            <div class='box-content char'>t</div>
           </div>
           <div class='back'>
-            <div class='box-content'></div>
+            <span id='greeting-salutation' class='box-content greeting'></span>
           </div>
         </div>
 
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>t</div>
+            <div class='box-content char'>t</div>
           </div>
-          <div class='back'>
-            <div class='box-content'></div>
-          </div>
+          <div class='back'></div>
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>g</div>
+            <div class='box-content char'>g</div>
           </div>
-          <div class='back'>
-            <div class='box-content'></div>
-          </div>
+          <div class='back'></div>
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>s</div>
+            <div class='box-content char'>s</div>
           </div>
           <div class='back'>
             <div class='box-content'>
@@ -60,7 +56,7 @@
 
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>t</div>
+            <div class='box-content char'>t</div>
           </div>
           <div class='back'>
             <div class='box-content'>
@@ -74,40 +70,34 @@
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>e</div>
+            <div class='box-content char'>e</div>
           </div>
-          <div class='back'>
-            <div class='box-content'></div>
-          </div>
+          <div class='back'></div>
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>v</div>
+            <div class='box-content char'>v</div>
           </div>
-          <div class='back'>
-            <div class='box-content'></div>
-          </div>
+          <div class='back'></div>
         </div>
 
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>e</div>
+            <div class='box-content char'>e</div>
           </div>
           <div class='back'>
-            <div class='box-content'></div>
+            <span id='greeting-date' class='box-content greeting'></span>
           </div>
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>n</div>
+            <div class='box-content char'>n</div>
           </div>
-          <div class='back'>
-            <div class='box-content'></div>
-          </div>
+          <div class='back'></div>
         </div>
         <div class='box'>
           <div class='front'>
-            <div class='box-content'>s</div>
+            <div class='box-content char'>s</div>
           </div>
           <div class='back color'></div>
         </div>
@@ -122,42 +112,92 @@
     </div>
     <script>
       (function init() {
-        var toggledOnce;
-        function safeClassName (className) {
-          return ' ' + className + ' ';
-        }
-        function hasClass(element, className) {
-          return element.className.indexOf(safeClassName(className)) !== -1;
-        }
-        function addClass(element, className) {
-          if(className.length === 0 || hasClass(element, className)) return;
-          element.className += safeClassName(className);
-        }
-        function removeClass(element, className) {
-          element.className = element.className.replace(safeClassName(className), '');
-        }
-        function togglePanelDisplay() {
-          toggledOnce = true;
-          var displayFn = hasClass(elementMap['panel-icon'], 'active') ? removeClass : addClass;
-          displayFn(elementMap['panel-icon'], 'active');
-          displayFn(elementMap['panel-display'], 'flipped');
-        }
-        function flipTruthyCoin() {
-          return Math.round(Math.random()) === 0
-        }
-        var elementMap = {
-          'panel-icon': document.getElementById('panel-icon'),
-          'panel-display': document.getElementById('panel-display'),
-        };
-        elementMap['panel-icon'].onclick = togglePanelDisplay;
-        addClass(document.body, flipTruthyCoin() ? 'black' : 'white');
-        addClass(elementMap['panel-display'], flipTruthyCoin() ? '' : 'rectangles');
-        addClass(elementMap['panel-display'], flipTruthyCoin() ? 'elephant'
-          : flipTruthyCoin() ? 'mandala'
-          : flipTruthyCoin() ? 'goldpanda'
-          : 'nimbus');
-        setTimeout(function() { !toggledOnce ? togglePanelDisplay() : null }, 2000);
-      })()
+        (function initGreeting() {
+          var daysWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+          var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+          function displayDayMonth(date) {
+            if(date > 3 && date < 21) return date+'th';
+            switch (date % 10) {
+              case 1:  return date+'st';
+              case 2:  return date+'nd';
+              case 3:  return date+'rd';
+              default: return date+'th';
+            }
+          }
+
+          function chooseGreeting(hour) {
+            if (hour > 4 && hour < 12) {
+              return 'Good morning';
+            } else if (hour >= 12 && hour < 18) {
+              return 'Good afternoon';
+            } else if (hour >= 18 && hour < 22) {
+              return 'Good evening';
+            } else {
+              return 'Greetings night owl';
+            }
+          }
+
+          function displayDate(date) {
+            return [date.getDate(), date.getMonth() + 1, date.getFullYear()].join('.')
+          }
+
+          function renderTime(timeTuple) {
+            var id = timeTuple[0];
+            var text = timeTuple[1];
+            document.getElementById(id).innerText = text;
+          }
+
+          var date = new Date();
+          [
+            // ['greeting-day-week', daysWeek[date.getDay()]],
+            // ['greeting-day-month', displayDayMonth(date.getDate())],
+            // ['greeting-month', months[date.getMonth()]],
+            // ['greeting-year', date.getFullYear()],
+            ['greeting-date', displayDate(date)],
+            ['greeting-salutation', chooseGreeting(date.getHours())],
+          ].map(renderTime);
+
+        }());
+
+        (function initPanel() {
+          var toggledOnce;
+          function safeClassName (className) {
+            return ' ' + className + ' ';
+          }
+          function hasClass(element, className) {
+            return element.className.indexOf(safeClassName(className)) !== -1;
+          }
+          function addClass(element, className) {
+            if(className.length === 0 || hasClass(element, className)) return;
+            element.className += safeClassName(className);
+          }
+          function removeClass(element, className) {
+            element.className = element.className.replace(safeClassName(className), '');
+          }
+          function togglePanelDisplay() {
+            toggledOnce = true;
+            var displayFn = hasClass(elementMap['panel-icon'], 'active') ? removeClass : addClass;
+            displayFn(elementMap['panel-icon'], 'active');
+            displayFn(elementMap['panel-display'], 'flipped');
+          }
+          function flipTruthyCoin() {
+            return Math.round(Math.random()) === 0
+          }
+          var elementMap = {
+            'panel-icon': document.getElementById('panel-icon'),
+            'panel-display': document.getElementById('panel-display'),
+          };
+          elementMap['panel-icon'].onclick = togglePanelDisplay;
+          addClass(document.body, flipTruthyCoin() ? 'black' : 'white');
+          addClass(elementMap['panel-display'], flipTruthyCoin() ? '' : 'rectangles');
+          addClass(elementMap['panel-display'], flipTruthyCoin() ? 'elephant'
+            : flipTruthyCoin() ? 'mandala'
+            : flipTruthyCoin() ? 'goldpanda'
+            : 'nimbus');
+          setTimeout(function() { !toggledOnce ? togglePanelDisplay() : null }, 2000);
+        }());
+      }());
     </script>
   </body>
 </html>

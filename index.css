@@ -1,8 +1,13 @@
+body {
+  font-family: 'Times New Roman', serif;
+}
 body.black {
   background-color: black;
+  color: white;
 }
 body.white {
   background-color: white;
+  color: black;
 }
 #panel .box {
   display: inline-block;
@@ -109,12 +114,17 @@ body.white {
         justify-content: center;
     -ms-flex-align: center;
         align-items: center;
-    font-size: 2em;
     font-weight: bold;
   }
+  #panel-display .box-content.char {
+    font-size: 2em;
+  }
   #panel-display .box-content .icon {
-    height: 1.6em;
-    width: 1.6em;
+    height: 4em;
+    width: 4em;
+  }
+  .greeting {
+    font-size: 1em;
   }
 }
 @media (min-width: 768px) {
@@ -219,12 +229,17 @@ body.white {
         justify-content: center;
     -ms-flex-align: center;
         align-items: center;
-    font-size: 3.33333333em;
     font-weight: bold;
   }
+  #panel-display .box-content.char {
+    font-size: 3.33333333em;
+  }
   #panel-display .box-content .icon {
-    height: 2.66666667em;
-    width: 2.66666667em;
+    height: 6.66666667em;
+    width: 6.66666667em;
+  }
+  .greeting {
+    font-size: 2em;
   }
 }
 body.white #panel #panel-icon .box,
@@ -319,5 +334,5 @@ body.black #panel #panel-display.rectangles .box .back:active {
 #panel {
   background: url('/img/em-elephant.jpg'), url('/img/em-goldpanda.jpg'), url('/img/em-mandala.jpg'), url('/img/em-nimbus.jpg');
   background-repeat: no-repeat;
-  background-position: -9000px -8000px;
+  background-position: -2000px -2000px;
 }

@@ -11,6 +11,7 @@
 @breakpointsMediaQuery: 0px, 768px;
 @panelDisplayList: 5em 0.2em 0.2em 3, 10em 0.4em 0.1em 3;
 @panelIconList: 1em 0.05em 0.1em 2, 2em 0.2em 0.2em 2;
+@greetingList: 1em, 2em;
 
 .loop(@index) when (@index > 0) {
   .loop(@index - 1);
@@ -26,6 +27,8 @@
     @display-box-border: extract(extract(@panelDisplayList, @index), 3);
     @display-box-per-row: extract(extract(@panelDisplayList, @index), 4);
 
+    @greeting-font-size: extract(@greetingList, @index);
+
     #panel-icon {
       .panel-icon(@icon-box-size, @icon-box-margin, @icon-box-border, @icon-box-per-row) ;
     }
@@ -33,6 +36,10 @@
     #panel-display {
       @top-offset: @icon-box-size * @icon-box-per-row * 3;
       .panel-display(@display-box-size, @display-box-margin, @display-box-border, @display-box-per-row, @top-offset);
+    }
+
+    .greeting {
+      font-size: @greeting-font-size;
     }
   }
 }
@@ -160,11 +167,14 @@
     justify-content: center;
     align-items: center;
 
-    font-size: @font-size;
     font-weight: bold;
 
+    &.char {
+      font-size: @font-size;
+    }
+
     .icon {
-      @icon-size: @font-size * 0.8;;
+      @icon-size: @font-size * 2;
       height: @icon-size;
       width: @icon-size;
     }
@@ -180,10 +190,8 @@ body.white #panel {
     color: white;
     .icon { fill: white; }
 
-    .front:hover,
-    .front:active,
-    .back:hover,
-    .back:active {
+    .front:hover, .front:active,
+    .back:hover, .back:active {
       background-repeat: repeat;
       color: black;
       background-color: white;
@@ -197,10 +205,8 @@ body.white #panel {
   }
 
   #panel-display.rectangles .box {
-    .front:hover,
-    .front:active,
-    .back:hover,
-    .back:active {
+    .front:hover, .front:active,
+    .back:hover, .back:active {
       background-image: url('/img/rectangle_white.gif');
     }
   }
@@ -217,10 +223,8 @@ body.black #panel {
     color: black;
     .icon { fill: black; }
 
-    .front:hover,
-    .front:active,
-    .back:hover,
-    .back:active {
+    .front:hover, .front:active,
+    .back:hover, .back:active {
       background-repeat: repeat;
       color: white;
       background-color: black;
@@ -235,37 +239,40 @@ body.black #panel {
   }
 
   #panel-display.rectangles .box {
-    .front:hover,
-    .front:active,
-    .back:hover,
-    .back:active {
+    .front:hover, .front:active,
+    .back:hover, .back:active {
       background-image: url('/img/rectangle_black.gif');
     }
   }
 }
 
-#panel #panel-display.elephant .box .stamp:hover,
-#panel #panel-display.elephant .box .stamp:active {
-  background-image: url('/img/em-elephant.jpg') !important;
+#panel #panel-display.elephant .box {
+  .stamp:hover, .stamp:active {
+    background-image: url('/img/em-elephant.jpg') !important;
+  }
 }
-#panel #panel-display.goldpanda .box .stamp:hover,
-#panel #panel-display.goldpanda .box .stamp:active {
-  background-image: url('/img/em-goldpanda.jpg') !important;
+#panel #panel-display.goldpanda .box {
+  .stamp:hover, .stamp:active {
+    background-image: url('/img/em-goldpanda.jpg') !important;
+  }
 }
-#panel #panel-display.mandala .box .stamp:hover,
-#panel #panel-display.mandala .box .stamp:active {
-  background-image: url('/img/em-mandala.jpg') !important;
+#panel #panel-display.mandala .box {
+  .stamp:hover, .stamp:active {
+    background-image: url('/img/em-mandala.jpg') !important;
+  }
 }
-#panel #panel-display.nimbus .box .stamp:hover,
-#panel #panel-display.nimbus .box .stamp:active {
-  background-image: url('/img/em-nimbus.jpg') !important;
+#panel #panel-display.nimbus .box {
+  .stamp:hover, .stamp:active {
+    background-image: url('/img/em-nimbus.jpg') !important;
+  }
 }
 
 #panel {
+  // preload
   background: url('/img/em-elephant.jpg'),
               url('/img/em-goldpanda.jpg'),
               url('/img/em-mandala.jpg'),
               url('/img/em-nimbus.jpg');
   background-repeat: no-repeat;
-  background-position: -9000px -8000px;
+  background-position: -2000px -2000px;
 }
