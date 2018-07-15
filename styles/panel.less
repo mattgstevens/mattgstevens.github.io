@@ -16,7 +16,7 @@
 .loop(@index) when (@index > 0) {
   .loop(@index - 1);
 
-  @media(min-width: extract(@breakpointsMediaQuery, @index)) {
+  @media (min-width: extract(@breakpointsMediaQuery, @index)) {
     @icon-box-size: extract(extract(@panelIconList, @index), 1);
     @icon-box-margin: extract(extract(@panelIconList, @index), 2);
     @icon-box-border: extract(extract(@panelIconList, @index), 3);
@@ -30,12 +30,23 @@
     @greeting-font-size: extract(@greetingList, @index);
 
     #panel-icon {
-      .panel-icon(@icon-box-size, @icon-box-margin, @icon-box-border, @icon-box-per-row) ;
+      .panel-icon(
+        @icon-box-size,
+        @icon-box-margin,
+        @icon-box-border,
+        @icon-box-per-row
+      );
     }
 
     #panel-display {
       @top-offset: @icon-box-size * @icon-box-per-row * 3;
-      .panel-display(@display-box-size, @display-box-margin, @display-box-border, @display-box-per-row, @top-offset);
+      .panel-display(
+        @display-box-size,
+        @display-box-margin,
+        @display-box-border,
+        @display-box-per-row,
+        @top-offset
+      );
     }
 
     .greeting {
@@ -58,10 +69,18 @@
     .box {
       background-color: @blue !important;
 
-      &.up { transform: translateX(@box-size) translateY(@box-size); }
-      &.down { transform: translateX(-@box-size) translateY(-@box-size); }
-      &.left { transform: translateX(@box-size) translateY(-@box-size); }
-      &.right { transform: translateX(-@box-size) translateY(@box-size); }
+      &.up {
+        transform: translateX(@box-size) translateY(@box-size);
+      }
+      &.down {
+        transform: translateX(-@box-size) translateY(-@box-size);
+      }
+      &.left {
+        transform: translateX(@box-size) translateY(-@box-size);
+      }
+      &.right {
+        transform: translateX(-@box-size) translateY(@box-size);
+      }
     }
   }
 
@@ -151,7 +170,7 @@
       &:active {
         background-color: @blue !important;
         background-image: none !important;
-      };
+      }
     }
   }
 
@@ -184,19 +203,37 @@
 body.white #panel {
   #panel-icon .box,
   #panel-display .box .front,
-  #panel-display .box .back { background-color: black; }
+  #panel-display .box .back {
+    background-color: black;
+  }
 
   #panel-display .box {
     color: white;
-    .icon { fill: white; }
+    .icon {
+      fill: white;
+    }
+    a {
+      color: white;
+    }
 
-    .front:hover, .front:active,
-    .back:hover, .back:active {
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-repeat: repeat;
       color: black;
       background-color: white;
 
-      .icon { fill: black; }
+      a {
+        color: black;
+        &:hover {
+          color: @blue;
+        }
+      }
+
+      .icon {
+        fill: black;
+      }
     }
     .stamp {
       background-color: white;
@@ -205,31 +242,54 @@ body.white #panel {
   }
 
   #panel-display.rectangles .box {
-    .front:hover, .front:active,
-    .back:hover, .back:active {
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-image: url('/img/rectangle_white.gif');
     }
   }
 
-  .icon { fill: white; }
+  .icon {
+    fill: white;
+  }
 }
 
 body.black #panel {
   #panel-icon .box,
   #panel-display .box .front,
-  #panel-display .box .back { background-color: white; }
+  #panel-display .box .back {
+    background-color: white;
+  }
 
   #panel-display .box {
     color: black;
-    .icon { fill: black; }
+    .icon {
+      fill: black;
+    }
 
-    .front:hover, .front:active,
-    .back:hover, .back:active {
+    a {
+      color: black;
+    }
+
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-repeat: repeat;
       color: white;
       background-color: black;
 
-      .icon { fill: white; }
+      .icon {
+        fill: white;
+      }
+
+      a {
+        color: white;
+        &:hover {
+          color: @red;
+        }
+      }
     }
 
     .stamp {
@@ -239,46 +299,46 @@ body.black #panel {
   }
 
   #panel-display.rectangles .box {
-    .front:hover, .front:active,
-    .back:hover, .back:active {
+    .front:hover,
+    .front:active,
+    .back:hover,
+    .back:active {
       background-image: url('/img/rectangle_black.gif');
     }
   }
 }
 
 #panel #panel-display.elephant .box {
-  .stamp:hover, .stamp:active {
+  .stamp:hover,
+  .stamp:active {
     background-image: url('/img/em-elephant.jpg') !important;
   }
 }
 #panel #panel-display.goldpanda .box {
-  .stamp:hover, .stamp:active {
+  .stamp:hover,
+  .stamp:active {
     background-image: url('/img/em-goldpanda.jpg') !important;
   }
 }
 #panel #panel-display.mandala .box {
-  .stamp:hover, .stamp:active {
+  .stamp:hover,
+  .stamp:active {
     background-image: url('/img/em-mandala.jpg') !important;
   }
 }
 #panel #panel-display.nimbus .box {
-  .stamp:hover, .stamp:active {
+  .stamp:hover,
+  .stamp:active {
     background-image: url('/img/em-nimbus.jpg') !important;
   }
 }
 
 #panel {
   // preload background images
-  background: url('/img/em-elephant.jpg'),
-              url('/img/em-goldpanda.jpg'),
-              url('/img/em-mandala.jpg'),
-              url('/img/em-nimbus.jpg'),
-
-              url(/img/em-black.gif),
-              url(/img/em-white.gif),
-
-              url('/img/rectangle_black.gif'),
-              url('/img/rectangle_white.gif');
+  background: url('/img/em-elephant.jpg'), url('/img/em-goldpanda.jpg'),
+    url('/img/em-mandala.jpg'), url('/img/em-nimbus.jpg'),
+    url(/img/em-black.gif), url(/img/em-white.gif),
+    url('/img/rectangle_black.gif'), url('/img/rectangle_white.gif');
   background-repeat: no-repeat;
   background-position: -2000px -2000px;
 }

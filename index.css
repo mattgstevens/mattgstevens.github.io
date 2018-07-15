@@ -253,6 +253,9 @@ body.white #panel #panel-display .box {
 body.white #panel #panel-display .box .icon {
   fill: white;
 }
+body.white #panel #panel-display .box a {
+  color: white;
+}
 body.white #panel #panel-display .box .front:hover,
 body.white #panel #panel-display .box .front:active,
 body.white #panel #panel-display .box .back:hover,
@@ -260,6 +263,18 @@ body.white #panel #panel-display .box .back:active {
   background-repeat: repeat;
   color: black;
   background-color: white;
+}
+body.white #panel #panel-display .box .front:hover a,
+body.white #panel #panel-display .box .front:active a,
+body.white #panel #panel-display .box .back:hover a,
+body.white #panel #panel-display .box .back:active a {
+  color: black;
+}
+body.white #panel #panel-display .box .front:hover a:hover,
+body.white #panel #panel-display .box .front:active a:hover,
+body.white #panel #panel-display .box .back:hover a:hover,
+body.white #panel #panel-display .box .back:active a:hover {
+  color: #3BC7DB;
 }
 body.white #panel #panel-display .box .front:hover .icon,
 body.white #panel #panel-display .box .front:active .icon,
@@ -291,6 +306,9 @@ body.black #panel #panel-display .box {
 body.black #panel #panel-display .box .icon {
   fill: black;
 }
+body.black #panel #panel-display .box a {
+  color: black;
+}
 body.black #panel #panel-display .box .front:hover,
 body.black #panel #panel-display .box .front:active,
 body.black #panel #panel-display .box .back:hover,
@@ -304,6 +322,18 @@ body.black #panel #panel-display .box .front:active .icon,
 body.black #panel #panel-display .box .back:hover .icon,
 body.black #panel #panel-display .box .back:active .icon {
   fill: white;
+}
+body.black #panel #panel-display .box .front:hover a,
+body.black #panel #panel-display .box .front:active a,
+body.black #panel #panel-display .box .back:hover a,
+body.black #panel #panel-display .box .back:active a {
+  color: white;
+}
+body.black #panel #panel-display .box .front:hover a:hover,
+body.black #panel #panel-display .box .front:active a:hover,
+body.black #panel #panel-display .box .back:hover a:hover,
+body.black #panel #panel-display .box .back:active a:hover {
+  color: #D2162A;
 }
 body.black #panel #panel-display .box .stamp {
   background-image: url('/img/em-white.gif') !important;

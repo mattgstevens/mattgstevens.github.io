@@ -4,6 +4,7 @@
   "description": "A www thing on the net for mattgstevens",
   "main": "index.html",
   "scripts": {
+    "start": "yarn server",
     "build": "gulp build",
     "server": "gulp server"
   },
@@ -22,6 +23,7 @@
     "gulp-cli": "^1.2.1",
     "gulp-less": "^3.0.5",
     "gulp-server-livereload": "^1.7.3",
-    "less-plugin-autoprefix": "^1.5.1"
+    "less-plugin-autoprefix": "^1.5.1",
+    "prettier": "^1.13.7"
   }
 }
