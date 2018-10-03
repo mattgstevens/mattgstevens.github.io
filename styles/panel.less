@@ -67,8 +67,6 @@
 
   &.active {
     .box {
-      background-color: @blue !important;
-
       &.up {
         transform: translateX(@box-size) translateY(@box-size);
       }
@@ -207,6 +205,10 @@ body.white #panel {
     background-color: black;
   }
 
+  #panel-icon.active .box {
+    background-color: @blue !important;
+  }
+
   #panel-display .box {
     color: white;
     .icon {
@@ -262,6 +264,10 @@ body.black #panel {
   #panel-display .box .front,
   #panel-display .box .back {
     background-color: white;
+  }
+
+  #panel-icon.active .box {
+    background-color: @red !important;
   }
 
   #panel-display .box {

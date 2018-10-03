@@ -22,9 +22,6 @@ body.white {
     width: 2.6em;
     transform: rotate(45deg);
   }
-  #panel-icon.active .box {
-    background-color: #3BC7DB !important;
-  }
   #panel-icon.active .box.up {
     transform: translateX(1em) translateY(1em);
   }
@@ -137,9 +134,6 @@ body.white {
     width: 5.6em;
     transform: rotate(45deg);
   }
-  #panel-icon.active .box {
-    background-color: #3BC7DB !important;
-  }
   #panel-icon.active .box.up {
     transform: translateX(2em) translateY(2em);
   }
@@ -248,6 +242,9 @@ body.white #panel #panel-display .box .front,
 body.white #panel #panel-display .box .back {
   background-color: black;
 }
+body.white #panel #panel-icon.active .box {
+  background-color: #3BC7DB !important;
+}
 body.white #panel #panel-display .box {
   color: white;
 }
@@ -303,6 +300,10 @@ body.black #panel #panel-display .box .front,
 body #panel #panel-display .box .back,
 body.black #panel #panel-display .box .back {
   background-color: white;
+}
+body #panel #panel-icon.active .box,
+body.black #panel #panel-icon.active .box {
+  background-color: #D2162A !important;
 }
 body #panel #panel-display .box,
 body.black #panel #panel-display .box {
