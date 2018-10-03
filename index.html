@@ -10,7 +10,7 @@
           <div class='front'>
             <div class='box-content char'>m</div>
           </div>
-          <div class='back stamp'></div>
+          <div id="stamp" class='back mandala '></div>
         </div>
         <div class='box'>
           <div class='front'>
@@ -167,7 +167,27 @@
         }());
 
         (function initPanel() {
-          var toggledOnce;
+          //
+          // state
+          //
+
+          var elementMap = {
+            'panel-icon': document.getElementById('panel-icon'),
+            'panel-display': document.getElementById('panel-display'),
+            'stamp': document.getElementById('stamp')
+          };
+          var stampState = {
+            choices: ['elephant', 'mandala', 'goldpanda', 'nimbus'],
+            activeIndex: 0
+          }
+          var toggledOnce = false
+          var interval
+
+
+          //
+          // util functions
+          //
+
           function safeClassName (className) {
             return ' ' + className + ' ';
           }
@@ -181,27 +201,39 @@
           function removeClass(element, className) {
             element.className = element.className.replace(safeClassName(className), '');
           }
+
+          function flipTruthyCoin() {
+            return Math.round(Math.random()) === 0
+          }
+
+          //
+          // render functions
+          //
+
           function togglePanelDisplay() {
             toggledOnce = true;
             var displayFn = hasClass(elementMap['panel-icon'], 'active') ? removeClass : addClass;
             displayFn(elementMap['panel-icon'], 'active');
             displayFn(elementMap['panel-display'], 'flipped');
           }
-          function flipTruthyCoin() {
-            return Math.round(Math.random()) === 0
+
+          function chooseNextPanel() {
+            removeClass(elementMap['stamp'], stampState.choices[stampState.activeIndex])
+            stampState.activeIndex = (stampState.activeIndex + 1) % stampState.choices.length
+            addClass(elementMap['stamp'], stampState.choices[stampState.activeIndex])
           }
-          var elementMap = {
-            'panel-icon': document.getElementById('panel-icon'),
-            'panel-display': document.getElementById('panel-display'),
-          };
+
+          //
+          // init
+          //
+
           elementMap['panel-icon'].onclick = togglePanelDisplay;
           addClass(elementMap['panel-display'], flipTruthyCoin() ? '' : 'rectangles');
-          addClass(elementMap['panel-display'],
-              flipTruthyCoin() ? 'elephant'
-            : flipTruthyCoin() ? 'mandala'
-            : flipTruthyCoin() ? 'goldpanda'
-            :                    'nimbus');
-          setTimeout(function() { !toggledOnce ? togglePanelDisplay() : null }, 2000);
+
+          chooseNextPanel();
+          setInterval(chooseNextPanel, 500);
+
+          setTimeout(function() { if(!toggledOnce) togglePanelDisplay() }, 2000);
         }());
       }());
     </script>

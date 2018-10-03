@@ -156,7 +156,7 @@
     margin: @box-margin;
     text-align: center;
 
-    .stamp {
+    #stamp {
       background-size: 100%;
       background-repeat: no-repeat;
     }
@@ -237,7 +237,7 @@ body.white #panel {
         fill: black;
       }
     }
-    .stamp {
+    #stamp {
       background-color: white;
       background-image: url('/img/em-black.gif') !important;
     }
@@ -300,7 +300,7 @@ body.black #panel {
       }
     }
 
-    .stamp {
+    #stamp {
       background-image: url('/img/em-white.gif') !important;
       background-color: black;
     }
@@ -316,27 +316,24 @@ body.black #panel {
   }
 }
 
-#panel #panel-display.elephant .box {
-  .stamp:hover,
-  .stamp:active {
+#panel #panel-display .box {
+  #stamp.elephant:hover,
+  #stamp.elephant:active {
     background-image: url('/img/em-elephant.jpg') !important;
   }
-}
-#panel #panel-display.goldpanda .box {
-  .stamp:hover,
-  .stamp:active {
+
+  #stamp.goldpanda:hover,
+  #stamp.goldpanda:active {
     background-image: url('/img/em-goldpanda.jpg') !important;
   }
-}
-#panel #panel-display.mandala .box {
-  .stamp:hover,
-  .stamp:active {
+
+  #stamp.mandala:hover,
+  #stamp.mandala:active {
     background-image: url('/img/em-mandala.jpg') !important;
   }
-}
-#panel #panel-display.nimbus .box {
-  .stamp:hover,
-  .stamp:active {
+
+  #stamp.nimbus:hover,
+  #stamp.nimbus:active {
     background-image: url('/img/em-nimbus.jpg') !important;
   }
 }

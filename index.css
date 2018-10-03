@@ -88,7 +88,7 @@ body.white {
     margin: 0.2em;
     text-align: center;
   }
-  #panel-display .box .stamp {
+  #panel-display .box #stamp {
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -200,7 +200,7 @@ body.white {
     margin: 0.4em;
     text-align: center;
   }
-  #panel-display .box .stamp {
+  #panel-display .box #stamp {
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -280,7 +280,7 @@ body.white #panel #panel-display .box .back:hover .icon,
 body.white #panel #panel-display .box .back:active .icon {
   fill: black;
 }
-body.white #panel #panel-display .box .stamp {
+body.white #panel #panel-display .box #stamp {
   background-color: white;
   background-image: url('/img/em-black.gif') !important;
 }
@@ -359,8 +359,8 @@ body #panel #panel-display .box .back:active a:hover,
 body.black #panel #panel-display .box .back:active a:hover {
   color: #D2162A;
 }
-body #panel #panel-display .box .stamp,
-body.black #panel #panel-display .box .stamp {
+body #panel #panel-display .box #stamp,
+body.black #panel #panel-display .box #stamp {
   background-image: url('/img/em-white.gif') !important;
   background-color: black;
 }
@@ -374,20 +374,20 @@ body #panel #panel-display.rectangles .box .back:active,
 body.black #panel #panel-display.rectangles .box .back:active {
   background-image: url('/img/rectangle_black.gif');
 }
-#panel #panel-display.elephant .box .stamp:hover,
-#panel #panel-display.elephant .box .stamp:active {
+#panel #panel-display .box #stamp.elephant:hover,
+#panel #panel-display .box #stamp.elephant:active {
   background-image: url('/img/em-elephant.jpg') !important;
 }
-#panel #panel-display.goldpanda .box .stamp:hover,
-#panel #panel-display.goldpanda .box .stamp:active {
+#panel #panel-display .box #stamp.goldpanda:hover,
+#panel #panel-display .box #stamp.goldpanda:active {
   background-image: url('/img/em-goldpanda.jpg') !important;
 }
-#panel #panel-display.mandala .box .stamp:hover,
-#panel #panel-display.mandala .box .stamp:active {
+#panel #panel-display .box #stamp.mandala:hover,
+#panel #panel-display .box #stamp.mandala:active {
   background-image: url('/img/em-mandala.jpg') !important;
 }
-#panel #panel-display.nimbus .box .stamp:hover,
-#panel #panel-display.nimbus .box .stamp:active {
+#panel #panel-display .box #stamp.nimbus:hover,
+#panel #panel-display .box #stamp.nimbus:active {
   background-image: url('/img/em-nimbus.jpg') !important;
 }
 #panel {
