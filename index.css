@@ -1,6 +1,7 @@
 body {
   font-family: 'Times New Roman', serif;
 }
+body,
 body.black {
   background-color: black;
   color: white;
@@ -295,53 +296,80 @@ body.white #panel #panel-display.rectangles .box .back:active {
 body.white #panel .icon {
   fill: white;
 }
+body #panel #panel-icon .box,
 body.black #panel #panel-icon .box,
+body #panel #panel-display .box .front,
 body.black #panel #panel-display .box .front,
+body #panel #panel-display .box .back,
 body.black #panel #panel-display .box .back {
   background-color: white;
 }
+body #panel #panel-display .box,
 body.black #panel #panel-display .box {
   color: black;
 }
+body #panel #panel-display .box .icon,
 body.black #panel #panel-display .box .icon {
   fill: black;
 }
+body #panel #panel-display .box a,
 body.black #panel #panel-display .box a {
   color: black;
 }
+body #panel #panel-display .box .front:hover,
 body.black #panel #panel-display .box .front:hover,
+body #panel #panel-display .box .front:active,
 body.black #panel #panel-display .box .front:active,
+body #panel #panel-display .box .back:hover,
 body.black #panel #panel-display .box .back:hover,
+body #panel #panel-display .box .back:active,
 body.black #panel #panel-display .box .back:active {
   background-repeat: repeat;
   color: white;
   background-color: black;
 }
+body #panel #panel-display .box .front:hover .icon,
 body.black #panel #panel-display .box .front:hover .icon,
+body #panel #panel-display .box .front:active .icon,
 body.black #panel #panel-display .box .front:active .icon,
+body #panel #panel-display .box .back:hover .icon,
 body.black #panel #panel-display .box .back:hover .icon,
+body #panel #panel-display .box .back:active .icon,
 body.black #panel #panel-display .box .back:active .icon {
   fill: white;
 }
+body #panel #panel-display .box .front:hover a,
 body.black #panel #panel-display .box .front:hover a,
+body #panel #panel-display .box .front:active a,
 body.black #panel #panel-display .box .front:active a,
+body #panel #panel-display .box .back:hover a,
 body.black #panel #panel-display .box .back:hover a,
+body #panel #panel-display .box .back:active a,
 body.black #panel #panel-display .box .back:active a {
   color: white;
 }
+body #panel #panel-display .box .front:hover a:hover,
 body.black #panel #panel-display .box .front:hover a:hover,
+body #panel #panel-display .box .front:active a:hover,
 body.black #panel #panel-display .box .front:active a:hover,
+body #panel #panel-display .box .back:hover a:hover,
 body.black #panel #panel-display .box .back:hover a:hover,
+body #panel #panel-display .box .back:active a:hover,
 body.black #panel #panel-display .box .back:active a:hover {
   color: #D2162A;
 }
+body #panel #panel-display .box .stamp,
 body.black #panel #panel-display .box .stamp {
   background-image: url('/img/em-white.gif') !important;
   background-color: black;
 }
+body #panel #panel-display.rectangles .box .front:hover,
 body.black #panel #panel-display.rectangles .box .front:hover,
+body #panel #panel-display.rectangles .box .front:active,
 body.black #panel #panel-display.rectangles .box .front:active,
+body #panel #panel-display.rectangles .box .back:hover,
 body.black #panel #panel-display.rectangles .box .back:hover,
+body #panel #panel-display.rectangles .box .back:active,
 body.black #panel #panel-display.rectangles .box .back:active {
   background-image: url('/img/rectangle_black.gif');
 }

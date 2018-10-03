@@ -128,6 +128,15 @@
             }
           }
 
+          function chooseColorTheme(hour) {
+            var themeColor = 'black'
+            if (hour >= 9 &&  hour < 17) {
+              themeColor = 'white'
+            }
+
+            addClass(document.body, themeColor);
+          }
+
           function chooseGreeting(hour) {
             if (hour > 4 && hour < 12) {
               return 'Good morning';
@@ -191,7 +200,6 @@
             'panel-display': document.getElementById('panel-display'),
           };
           elementMap['panel-icon'].onclick = togglePanelDisplay;
-          addClass(document.body, flipTruthyCoin() ? 'black' : 'white');
           addClass(elementMap['panel-display'], flipTruthyCoin() ? '' : 'rectangles');
           addClass(elementMap['panel-display'], flipTruthyCoin() ? 'elephant'
             : flipTruthyCoin() ? 'mandala'
