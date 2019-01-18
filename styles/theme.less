@@ -5,6 +5,11 @@
 @blue: #3BC7DB;
 @red: #D2162A;
 
+// TODO: update white e_m image to match this white
+@white: #FAF9F4;
+// @black: #2D2D2D;
+@black: black;
+
 //
 // animation
 //
@@ -26,12 +31,12 @@ body {
 
   // default is dark theme
   &,
-  &.black {
-    background-color: black;
-    color: white;
+  &.dark-theme {
+    background-color: @black;
+    color: @white;
   }
-  &.white {
-    background-color: white;
-    color: black;
+  &.bright-theme {
+    background-color: @white;
+    color: @black;
   }
 }

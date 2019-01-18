@@ -2,12 +2,12 @@ body {
   font-family: 'Times New Roman', serif;
 }
 body,
-body.black {
+body.dark-theme {
   background-color: black;
-  color: white;
+  color: #FAF9F4;
 }
-body.white {
-  background-color: white;
+body.bright-theme {
+  background-color: #FAF9F4;
   color: black;
 }
 #panel .box {
@@ -237,141 +237,138 @@ body.white {
     font-size: 2em;
   }
 }
-body.white #panel #panel-icon .box,
-body.white #panel #panel-display .box .front,
-body.white #panel #panel-display .box .back {
+body.bright-theme #panel #panel-icon .box,
+body.bright-theme #panel #panel-display .box .front,
+body.bright-theme #panel #panel-display .box .back {
   background-color: black;
 }
-body.white #panel #panel-icon.active .box {
+body.bright-theme #panel #panel-icon.active .box {
   background-color: #3BC7DB !important;
 }
-body.white #panel #panel-display .box {
-  color: white;
+body.bright-theme #panel #panel-display .box {
+  color: #FAF9F4;
 }
-body.white #panel #panel-display .box .icon {
-  fill: white;
+body.bright-theme #panel #panel-display .box .icon {
+  fill: #FAF9F4;
 }
-body.white #panel #panel-display .box a {
-  color: white;
+body.bright-theme #panel #panel-display .box a {
+  color: #FAF9F4;
 }
-body.white #panel #panel-display .box .front:hover,
-body.white #panel #panel-display .box .front:active,
-body.white #panel #panel-display .box .back:hover,
-body.white #panel #panel-display .box .back:active {
+body.bright-theme #panel #panel-display .box .front:hover,
+body.bright-theme #panel #panel-display .box .front:active,
+body.bright-theme #panel #panel-display .box .back:hover,
+body.bright-theme #panel #panel-display .box .back:active {
   background-repeat: repeat;
   color: black;
-  background-color: white;
+  background-color: #FAF9F4;
 }
-body.white #panel #panel-display .box .front:hover a,
-body.white #panel #panel-display .box .front:active a,
-body.white #panel #panel-display .box .back:hover a,
-body.white #panel #panel-display .box .back:active a {
+body.bright-theme #panel #panel-display .box .front:hover a,
+body.bright-theme #panel #panel-display .box .front:active a,
+body.bright-theme #panel #panel-display .box .back:hover a,
+body.bright-theme #panel #panel-display .box .back:active a {
   color: black;
 }
-body.white #panel #panel-display .box .front:hover a:hover,
-body.white #panel #panel-display .box .front:active a:hover,
-body.white #panel #panel-display .box .back:hover a:hover,
-body.white #panel #panel-display .box .back:active a:hover {
+body.bright-theme #panel #panel-display .box .front:hover a:hover,
+body.bright-theme #panel #panel-display .box .front:active a:hover,
+body.bright-theme #panel #panel-display .box .back:hover a:hover,
+body.bright-theme #panel #panel-display .box .back:active a:hover {
   color: #3BC7DB;
 }
-body.white #panel #panel-display .box .front:hover .icon,
-body.white #panel #panel-display .box .front:active .icon,
-body.white #panel #panel-display .box .back:hover .icon,
-body.white #panel #panel-display .box .back:active .icon {
-  fill: black;
+body.bright-theme #panel #panel-display .box .front:hover .icon,
+body.bright-theme #panel #panel-display .box .front:active .icon,
+body.bright-theme #panel #panel-display .box .back:hover .icon,
+body.bright-theme #panel #panel-display .box .back:active .icon {
+  fill: #3BC7DB;
 }
-body.white #panel #panel-display .box #stamp {
-  background-color: white;
+body.bright-theme #panel #panel-display .box #stamp {
+  background-color: #FAF9F4;
   background-image: url('/img/em-black.gif') !important;
 }
-body.white #panel #panel-display.rectangles .box .front:hover,
-body.white #panel #panel-display.rectangles .box .front:active,
-body.white #panel #panel-display.rectangles .box .back:hover,
-body.white #panel #panel-display.rectangles .box .back:active {
+body.bright-theme #panel #panel-display.rectangles .box .front:hover,
+body.bright-theme #panel #panel-display.rectangles .box .front:active,
+body.bright-theme #panel #panel-display.rectangles .box .back:hover,
+body.bright-theme #panel #panel-display.rectangles .box .back:active {
   background-image: url('/img/rectangle_white.gif');
 }
-body.white #panel .icon {
-  fill: white;
-}
 body #panel #panel-icon .box,
-body.black #panel #panel-icon .box,
+body.dark-theme #panel #panel-icon .box,
 body #panel #panel-display .box .front,
-body.black #panel #panel-display .box .front,
+body.dark-theme #panel #panel-display .box .front,
 body #panel #panel-display .box .back,
-body.black #panel #panel-display .box .back {
-  background-color: white;
+body.dark-theme #panel #panel-display .box .back {
+  background-color: #FAF9F4;
 }
 body #panel #panel-icon.active .box,
-body.black #panel #panel-icon.active .box {
+body.dark-theme #panel #panel-icon.active .box {
   background-color: #D2162A !important;
 }
 body #panel #panel-display .box,
-body.black #panel #panel-display .box {
+body.dark-theme #panel #panel-display .box {
   color: black;
 }
 body #panel #panel-display .box .icon,
-body.black #panel #panel-display .box .icon {
+body.dark-theme #panel #panel-display .box .icon {
   fill: black;
 }
 body #panel #panel-display .box a,
-body.black #panel #panel-display .box a {
+body.dark-theme #panel #panel-display .box a {
   color: black;
 }
 body #panel #panel-display .box .front:hover,
-body.black #panel #panel-display .box .front:hover,
+body.dark-theme #panel #panel-display .box .front:hover,
 body #panel #panel-display .box .front:active,
-body.black #panel #panel-display .box .front:active,
+body.dark-theme #panel #panel-display .box .front:active,
 body #panel #panel-display .box .back:hover,
-body.black #panel #panel-display .box .back:hover,
+body.dark-theme #panel #panel-display .box .back:hover,
 body #panel #panel-display .box .back:active,
-body.black #panel #panel-display .box .back:active {
+body.dark-theme #panel #panel-display .box .back:active {
   background-repeat: repeat;
-  color: white;
+  color: #FAF9F4;
   background-color: black;
 }
-body #panel #panel-display .box .front:hover .icon,
-body.black #panel #panel-display .box .front:hover .icon,
-body #panel #panel-display .box .front:active .icon,
-body.black #panel #panel-display .box .front:active .icon,
-body #panel #panel-display .box .back:hover .icon,
-body.black #panel #panel-display .box .back:hover .icon,
-body #panel #panel-display .box .back:active .icon,
-body.black #panel #panel-display .box .back:active .icon {
-  fill: white;
-}
 body #panel #panel-display .box .front:hover a,
-body.black #panel #panel-display .box .front:hover a,
+body.dark-theme #panel #panel-display .box .front:hover a,
 body #panel #panel-display .box .front:active a,
-body.black #panel #panel-display .box .front:active a,
+body.dark-theme #panel #panel-display .box .front:active a,
 body #panel #panel-display .box .back:hover a,
-body.black #panel #panel-display .box .back:hover a,
+body.dark-theme #panel #panel-display .box .back:hover a,
 body #panel #panel-display .box .back:active a,
-body.black #panel #panel-display .box .back:active a {
-  color: white;
+body.dark-theme #panel #panel-display .box .back:active a {
+  color: #FAF9F4;
 }
 body #panel #panel-display .box .front:hover a:hover,
-body.black #panel #panel-display .box .front:hover a:hover,
+body.dark-theme #panel #panel-display .box .front:hover a:hover,
 body #panel #panel-display .box .front:active a:hover,
-body.black #panel #panel-display .box .front:active a:hover,
+body.dark-theme #panel #panel-display .box .front:active a:hover,
 body #panel #panel-display .box .back:hover a:hover,
-body.black #panel #panel-display .box .back:hover a:hover,
+body.dark-theme #panel #panel-display .box .back:hover a:hover,
 body #panel #panel-display .box .back:active a:hover,
-body.black #panel #panel-display .box .back:active a:hover {
+body.dark-theme #panel #panel-display .box .back:active a:hover {
   color: #D2162A;
 }
+body #panel #panel-display .box .front:hover .icon,
+body.dark-theme #panel #panel-display .box .front:hover .icon,
+body #panel #panel-display .box .front:active .icon,
+body.dark-theme #panel #panel-display .box .front:active .icon,
+body #panel #panel-display .box .back:hover .icon,
+body.dark-theme #panel #panel-display .box .back:hover .icon,
+body #panel #panel-display .box .back:active .icon,
+body.dark-theme #panel #panel-display .box .back:active .icon {
+  fill: #D2162A;
+}
 body #panel #panel-display .box #stamp,
-body.black #panel #panel-display .box #stamp {
+body.dark-theme #panel #panel-display .box #stamp {
   background-image: url('/img/em-white.gif') !important;
   background-color: black;
 }
 body #panel #panel-display.rectangles .box .front:hover,
-body.black #panel #panel-display.rectangles .box .front:hover,
+body.dark-theme #panel #panel-display.rectangles .box .front:hover,
 body #panel #panel-display.rectangles .box .front:active,
-body.black #panel #panel-display.rectangles .box .front:active,
+body.dark-theme #panel #panel-display.rectangles .box .front:active,
 body #panel #panel-display.rectangles .box .back:hover,
-body.black #panel #panel-display.rectangles .box .back:hover,
+body.dark-theme #panel #panel-display.rectangles .box .back:hover,
 body #panel #panel-display.rectangles .box .back:active,
-body.black #panel #panel-display.rectangles .box .back:active {
+body.dark-theme #panel #panel-display.rectangles .box .back:active {
   background-image: url('/img/rectangle_black.gif');
 }
 #panel #panel-display .box #stamp.elephant:hover,

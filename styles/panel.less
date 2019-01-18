@@ -198,11 +198,11 @@
   }
 }
 
-body.white #panel {
+body.bright-theme #panel {
   #panel-icon .box,
   #panel-display .box .front,
   #panel-display .box .back {
-    background-color: black;
+    background-color: @black;
   }
 
   #panel-icon.active .box {
@@ -210,12 +210,12 @@ body.white #panel {
   }
 
   #panel-display .box {
-    color: white;
+    color: @white;
     .icon {
-      fill: white;
+      fill: @white;
     }
     a {
-      color: white;
+      color: @white;
     }
 
     .front:hover,
@@ -223,22 +223,22 @@ body.white #panel {
     .back:hover,
     .back:active {
       background-repeat: repeat;
-      color: black;
-      background-color: white;
+      color: @black;
+      background-color: @white;
 
       a {
-        color: black;
+        color: @black;
         &:hover {
           color: @blue;
         }
       }
 
       .icon {
-        fill: black;
+        fill: @blue;
       }
     }
     #stamp {
-      background-color: white;
+      background-color: @white;
       background-image: url('/img/em-black.gif') !important;
     }
   }
@@ -251,19 +251,15 @@ body.white #panel {
       background-image: url('/img/rectangle_white.gif');
     }
   }
-
-  .icon {
-    fill: white;
-  }
 }
 
 // default is dark theme
 body #panel,
-body.black #panel {
+body.dark-theme #panel {
   #panel-icon .box,
   #panel-display .box .front,
   #panel-display .box .back {
-    background-color: white;
+    background-color: @white;
   }
 
   #panel-icon.active .box {
@@ -271,13 +267,13 @@ body.black #panel {
   }
 
   #panel-display .box {
-    color: black;
+    color: @black;
     .icon {
-      fill: black;
+      fill: @black;
     }
 
     a {
-      color: black;
+      color: @black;
     }
 
     .front:hover,
@@ -285,24 +281,24 @@ body.black #panel {
     .back:hover,
     .back:active {
       background-repeat: repeat;
-      color: white;
-      background-color: black;
-
-      .icon {
-        fill: white;
-      }
+      color: @white;
+      background-color: @black;
 
       a {
-        color: white;
+        color: @white;
         &:hover {
           color: @red;
         }
+      }
+
+      .icon {
+        fill: @red;
       }
     }
 
     #stamp {
       background-image: url('/img/em-white.gif') !important;
-      background-color: black;
+      background-color: @black;
     }
   }
 
